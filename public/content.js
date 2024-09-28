@@ -15,16 +15,9 @@ chrome.storage.sync.get(
           // Increment the count for the normalized URL
           blockCounts[currentUrl] = (blockCounts[currentUrl] || 0) + 1;
 
-          // Log the count to ensure it's being incremented
-          console.log(
-            `Blocked ${currentUrl} ${blockCounts[currentUrl]} time(s).`
-          );
-
           // Save the updated block count back to chrome.storage.sync
           chrome.storage.sync.set({ blockCounts }, () => {
-            // Log confirmation of storage
-            console.log("Block count saved successfully.");
-          });
+        
 
           // Send a message to background.js to handle the redirection
           chrome.runtime.sendMessage({ action: "redirect" });
