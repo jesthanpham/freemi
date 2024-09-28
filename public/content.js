@@ -1,10 +1,10 @@
 chrome.storage.sync.get(
   ["blockedUrls", "blocking"],
   ({ blockedUrls, blocking }) => {
-    let currentUrl = window.location.href;
+    let oldCurrentUrl = window.location.href;
 
-    // Normalize the URL by removing query parameters and fragments
-    currentUrl = currentUrl.split("?")[0].split("#")[0];
+    const urlObject = new URL(oldCurrentUrl)
+    let currentUrl = urlObject.hostname
 
     if (blocking) {
       if (blockedUrls && blockedUrls.some((url) => currentUrl.includes(url))) {
