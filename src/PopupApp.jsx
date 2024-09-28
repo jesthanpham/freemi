@@ -44,11 +44,15 @@ function PopupApp() {
 
   return (
     <div className="PopupApp">
-      <header className="PopupApp-header">
-        <button onClick={() => toggleBlocking()}>
+      <div className="d-grid gap-2">
+        <button
+          className="btn btn-primary btn-lg m-2"
+          type="button"
+          onClick={() => toggleBlocking()}
+        >
           {blocking ? "Blocking is ON" : "Blocking is OFF"}
         </button>
-      </header>
+      </div>
       <main className="PopupApp-main">
         <p>Block URLs:</p>
         <input
