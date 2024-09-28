@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./PopupApp.css";
-
+import "../public/bootstrap.min.css";
 function PopupApp() {
   const [blockedUrls, setBlockedUrls] = useState([]); // State for blocked URLs
   const [newUrl, setNewUrl] = useState(""); // State for new URL input
