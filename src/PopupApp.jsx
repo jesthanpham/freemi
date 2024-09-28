@@ -20,9 +20,28 @@ function PopupApp() {
     });
   }, []);
 
+  function isValidUrl(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (error) {
+        return false;
+    }
+  }
+
   const addUrl = () => {
-    if (newUrl && !blockedUrls.includes(newUrl)) {
-      const updatedBlockedUrls = [...blockedUrls, newUrl];
+    let sanitizedURL;
+
+    //if user inputed a full form url sanitize it
+    if (isValidUrl(newUrl)) {
+      const urlObject = new URL(newUrl)
+      sanitizedURL = urlObject.hostname    
+    } else {
+      sanitizedURL = newUrl
+    }
+
+    if (sanitizedURL && !blockedUrls.includes(sanitizedURL)) {
+      const updatedBlockedUrls = [...blockedUrls, sanitizedURL];
       setBlockedUrls(updatedBlockedUrls);
       setNewUrl(""); // Clear the input field
 
