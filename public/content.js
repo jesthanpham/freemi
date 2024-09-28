@@ -15,6 +15,11 @@ chrome.storage.sync.get(
           // Increment the count for the normalized URL
           blockCounts[currentUrl] = (blockCounts[currentUrl] || 0) + 1;
 
+          // Log the count to ensure it's being incremented.
+          console.log(
+            `Blocked ${currentUrl} ${blockCounts[currentUrl]} time(s).`
+          );
+          
           // Save the updated block count back to chrome.storage.sync
           chrome.storage.sync.set({ blockCounts }, () => {
         
