@@ -19,10 +19,9 @@ chrome.storage.sync.get(
           console.log(
             `Blocked ${currentUrl} ${blockCounts[currentUrl]} time(s).`
           );
-          
+
           // Save the updated block count back to chrome.storage.sync
-          chrome.storage.sync.set({ blockCounts }, () => {
-        
+          chrome.storage.sync.set({ blockCounts });
 
           // Send a message to background.js to handle the redirection
           chrome.runtime.sendMessage({ action: "redirect" });
