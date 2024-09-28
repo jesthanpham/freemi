@@ -4,12 +4,18 @@ import "./PopupApp.css";
 function PopupApp() {
   const [blockedUrls, setBlockedUrls] = useState([]); // State for blocked URLs
   const [newUrl, setNewUrl] = useState(""); // State for new URL input
+  const [blocking, setBlocking] = useState(); // State for blocking status
 
   useEffect(() => {
     // Get the blocked URLs from Chrome storage
     chrome.storage.sync.get("blockedUrls", ({ blockedUrls }) => {
       if (blockedUrls) {
         setBlockedUrls(blockedUrls);
+      }
+    });
+    chrome.storage.sync.get("blocking", ({ blocking }) => {
+      if (blocking) {
+        setBlocking(blocking);
       }
     });
   }, []);
@@ -31,10 +37,17 @@ function PopupApp() {
     chrome.storage.sync.set({ blockedUrls: newBlockList }); //update chrome storage
   };
 
+  const toggleBlocking = () => {
+    setBlocking(!blocking);
+    chrome.storage.sync.set({ blocking: !blocking });
+  };
+
   return (
     <div className="PopupApp">
       <header className="PopupApp-header">
-        <h1>Extension Popup</h1>
+        <button onClick={() => toggleBlocking()}>
+          {blocking ? "Blocking is ON" : "Blocking is OFF"}
+        </button>
       </header>
       <main className="PopupApp-main">
         <p>Block URLs:</p>
