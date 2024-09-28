@@ -7,8 +7,13 @@ function PopupApp() {
 
   const addUrl = () => {
     if (newUrl && !blockedUrls.includes(newUrl)) {
-      setBlockedUrls([...blockedUrls, newUrl]);
+      const updatedBlockedUrls = [...blockedUrls, newUrl];
+      setBlockedUrls(updatedBlockedUrls);
       setNewUrl(""); // Clear the input field
+
+      // Store the updated blocked URLs in Chrome storage
+      chrome.storage.sync.set({ blockedUrls: updatedBlockedUrls });
+      console.log("Blocked URLs updated:", updatedBlockedUrls);
     }
   };
 
