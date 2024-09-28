@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./PopupApp.css";
 
 function PopupApp() {
   const [blockedUrls, setBlockedUrls] = useState([]); // State for blocked URLs
   const [newUrl, setNewUrl] = useState(""); // State for new URL input
+
+  useEffect(() => {
+    // Get the blocked URLs from Chrome storage
+    chrome.storage.sync.get("blockedUrls", ({ blockedUrls }) => {
+      if (blockedUrls) {
+        setBlockedUrls(blockedUrls);
+      }
+    });
+  }, []);
 
   const addUrl = () => {
     if (newUrl && !blockedUrls.includes(newUrl)) {
@@ -13,12 +22,13 @@ function PopupApp() {
 
       // Store the updated blocked URLs in Chrome storage
       chrome.storage.sync.set({ blockedUrls: updatedBlockedUrls });
-      console.log("Blocked URLs updated:", updatedBlockedUrls);
     }
   };
 
   const removeUrl = (urlToRemove) => {
-    setBlockedUrls(blockedUrls.filter((url) => url !== urlToRemove));
+    let newBlockList = blockedUrls.filter((url) => url !== urlToRemove);
+    setBlockedUrls(newBlockList);
+    chrome.storage.sync.set({ blockedUrls: newBlockList }); //update chrome storage
   };
 
   return (
