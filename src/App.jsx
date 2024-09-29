@@ -39,7 +39,7 @@ function App() {
           messages: [
             {
               role: "user",
-              content: `Generate a motivational quote based on avoiding these websites: ${blockedUrls}. Make it positive and encouraging.`,
+              content: `Generate a motivational quote focused on-self improvement. Incorporate keywords like empowering, to make the quote more specific and relevant. Set a tone that is caring, assertive and inspiring, ensuring it resonates with the intended audience of procrastination, lack of dedication and concentration. Draw inspiration from figures who overcame adversity while infusing a touch of humanity. Prioritize quotes that are concise, impactful, and filled with actionable advice. Emphasize getting back on track and encourage a hard working and growth mindset. This quote is one sentence and is also based on avoiding this websites: ${blockedUrls}.`,
             },
           ],
         },
