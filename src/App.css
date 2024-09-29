@@ -4,6 +4,9 @@ body {
   padding: 0;
   height: 100%; /* Ensure the body takes the full height */
   background-color: #ffead7;
+  font-family: "Fira Sans";
+  font-weight: 300;
+  font-style: normal;
 }
 
 #root {
@@ -21,7 +24,7 @@ body {
   margin-top: 40px;
   font-size: 80px;
   letter-spacing: 0.08em;
-  font-family: "Prata", serif;
+  font-family: "Prata";
   font-weight: 400;
   font-style: normal;
 }
@@ -66,14 +69,26 @@ body {
   height: 100%; /* Full height for vertical panels */
   border-radius: 12px;
 }
+
+.panel-header {
+  font-family: "Prata";
+  font-weight: 400;
+  font-style: normal;
+}
 .big-num {
+  margin: 0 0;
   font-size: 200px;
-  font-weight: bold;
-  color: #d31919;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+  font-family: "Prata";
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+li {
+  padding: 5px;
 }

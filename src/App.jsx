@@ -137,12 +137,13 @@ function App() {
       <div className="container">
         <div className="panel">
           {" "}
-          <h1>Despite blocking these sites, you've attempted to visit...</h1>
+          <p className="panel-header">Attempted to visit...</p>
           {blockCountEntries.length > 0 ? (
             <ul>
               {blockCountEntries.map(([url, count]) => (
                 <li key={url}>
-                  {formatUrl(url)} {count} times
+                  <strong>{formatUrl(url)}</strong>
+                  &nbsp;{count} {count === 1 ? "time" : "times"}
                 </li>
               ))}
             </ul>
@@ -150,25 +151,26 @@ function App() {
             <p>No URLs have been blocked yet.</p>
           )}
         </div>
-        <div className="panel">panel 2</div>
-        <div className="panel">panel 3</div>
-      </div>
-      <h1>You've strayed away... </h1>
-      <h1 className="big-num">{totalBlocks}</h1>
+        <div className="panel">
+          <p className="panel-header">You've strayed away... </p>
+          <h1 className="big-num">{totalBlocks}</h1>
+        </div>
+        <div className="panel">
+          <div>
+            <h2>Motivational Quote</h2>
 
-      <div>
-        <h2>Motivational Quote</h2>
+            {/* Show the loading state */}
+            {isLoading && <p>Loading quote...</p>}
 
-        {/* Show the loading state */}
-        {isLoading && <p>Loading quote...</p>}
+            {/* Show error if there is one */}
+            {error && <p style={{ color: "red" }}>{error}</p>}
 
-        {/* Show error if there is one */}
-        {error && <p style={{ color: "red" }}>{error}</p>}
-
-        {/* Display the quote letter by letter */}
-        <div>
-          <p>"{displayedQuote.replace(/^"|"$/g, "")}"</p>{" "}
-          {/* Wrap the displayedQuote in quotes here */}
+            {/* Display the quote letter by letter */}
+            <div>
+              <p>"{displayedQuote.replace(/^"|"$/g, "")}"</p>{" "}
+              {/* Wrap the displayedQuote in quotes here */}
+            </div>
+          </div>
         </div>
       </div>
     </div>
