@@ -3,6 +3,7 @@ import axios from "axios";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "../public/styles.css";
 import { dateData } from "../public/dateData";
+import lineArt from "./assets/Freemi-ai.png";
 
 function App() {
   const [blockCounts, setBlockCounts] = useState({});
@@ -185,6 +186,11 @@ function App() {
               <p>"{displayedQuote.replace(/^"|"$/g, "")}"</p>{" "}
               {/* Wrap the displayedQuote in quotes here */}
             </div>
+            <img
+              src={lineArt}
+              alt="line art of Freemi AI"
+              class="bottom-image"
+            />
           </div>
         </div>
         <div className="panel">

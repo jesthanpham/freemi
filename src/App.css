@@ -78,7 +78,7 @@ search-button:hover {
   display: flex; /* This puts the panels side by side */
   justify-content: space-between; /* Optional: Adds space between panels */
   width: 100%; /* Full width of the container */
-  height: 100vh; /* Full viewport height for vertical panels */
+  height: auto; /* Full viewport height for vertical panels */
   min-width: 640px;
 }
 
@@ -88,8 +88,9 @@ search-button:hover {
   margin: 0 10px; /* Optional: Adds space between panels */
   background-color: #ffe3c9; /* Panel background color */
   font-size: 20px;
-  height: 60%; /* Full height for vertical panels */
+  height: auto; /* Full viewport height for vertical panels */
   border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 .panel-header {
