@@ -52,6 +52,27 @@ body {
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.5); /* Slightly darker shadow */
 }
 
+.search-button {
+  margin-left: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 24px;
+  border: none;
+  background-color: #fdd6b1;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  transition: background-color 0.2s ease-in-out;
+  font-family: "Prata";
+  font-weight: 600;
+  font-style: bold;
+}
+
+search-button:hover {
+  background-color: #ffc58f;
+}
+
 .container {
   margin-top: 40px;
   display: flex; /* This puts the panels side by side */
@@ -63,9 +84,9 @@ body {
 
 .panel {
   flex: 1; /* Each panel takes up equal space */
+  padding: 10px;
   margin: 0 10px; /* Optional: Adds space between panels */
-  background-color: #fdd6b1; /* Panel background color */
-  border: 1px solid #ccc; /* Optional: Border for clarity */
+  background-color: #ffe3c9; /* Panel background color */
   font-size: 20px;
   height: 60%; /* Full height for vertical panels */
   border-radius: 12px;
@@ -73,7 +94,7 @@ body {
 
 .panel-header {
   font-family: "Prata";
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }
 .big-num {

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CalendarHeatmap from "react-calendar-heatmap";
+import "../public/styles.css";
 
 function App() {
   const [blockCounts, setBlockCounts] = useState({});
@@ -42,7 +44,7 @@ function App() {
           messages: [
             {
               role: "user",
-              content: `Generate a motivational quote focused on-self improvement. Incorporate keywords like empowering, to make the quote more specific and relevant. Set a tone that is caring, assertive and inspiring, ensuring it resonates with the intended audience of procrastination, lack of dedication and concentration. Draw inspiration from figures who overcame adversity while infusing a touch of humanity. Prioritize quotes that are concise, impactful, and filled with actionable advice. Emphasize getting back on track and encourage a hard working and growth mindset. This quote is one sentence and is also based on avoiding this websites: ${blockedUrls}.`,
+              content: `Generate a motivational quote focused on-self improvement. Incorporate keywords like empowering, to make the quote more specific and relevant. Set a tone that is caring, assertive and inspiring, ensuring it resonates with the intended audience of procrastination, lack of dedication and concentration. Draw inspiration from figures who overcame adversity while infusing a touch of humanity. Prioritize quotes that are concise, impactful, and filled with actionable advice. Emphasize getting back on track and encourage a hard working and growth mindset. 30 words max. This quote is one sentence and is also based on avoiding this websites: ${blockedUrls}.`,
             },
           ],
         },
@@ -134,6 +136,18 @@ function App() {
           </button>
         </div>
       </div>
+      <div>Your insights</div>
+      <CalendarHeatmap
+        startDate={new Date("2016-01-01")}
+        endDate={new Date("2016-04-01")}
+        values={[
+          { date: "2016-01-01", count: 12 },
+          { date: "2016-01-22", count: 122 },
+          { date: "2016-01-30", count: 38 },
+          // ...and so on
+        ]}
+      />
+
       <div className="container">
         <div className="panel">
           {" "}
@@ -154,7 +168,7 @@ function App() {
 
         <div className="panel">
           <div>
-            <h2>Motivational Quote</h2>
+            <p className="panel-header">Motivational Quote</p>
 
             {/* Show the loading state */}
             {isLoading && <p>Loading quote...</p>}
@@ -170,7 +184,7 @@ function App() {
           </div>
         </div>
         <div className="panel">
-          <p className="panel-header">You've strayed away a total of... </p>
+          <p className="panel-header">Freemi has kept you on track... </p>
           <h1 className="big-num">{totalBlocks}</h1>
           <p className="panel-header">{totalBlocks === 1 ? "time" : "times"}</p>
         </div>
