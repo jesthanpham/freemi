@@ -169,9 +169,7 @@ function App() {
           ) : (
             <p>No URLs have been blocked yet.</p>
           )}
-        </div>
-
-        <div className="panel">
+          <hr className="separator"></hr>
           <div>
             <p className="panel-header">Motivational Quote</p>
 
@@ -186,17 +184,29 @@ function App() {
               <p>"{displayedQuote.replace(/^"|"$/g, "")}"</p>{" "}
               {/* Wrap the displayedQuote in quotes here */}
             </div>
-            <img
-              src={lineArt}
-              alt="line art of Freemi AI"
-              class="bottom-image"
-            />
           </div>
+        </div>
+
+        <div className="panel">
+          <img src={lineArt} alt="line art of Freemi AI" class="bottom-image" />
         </div>
         <div className="panel">
           <p className="panel-header">Freemi has kept you on track... </p>
           <h1 className="big-num">{totalBlocks}</h1>
-          <p className="panel-header">{totalBlocks === 1 ? "time" : "times"}</p>
+          <p className="times">{totalBlocks === 1 ? "time" : "times"}</p>
+          <hr className="separator"></hr>
+          <p className="panel-header">Blocked the most sites on...</p>
+          <ul>
+            <li>
+              <strong>1.</strong> 29/9/2024
+            </li>
+            <li>
+              <strong>2.</strong> 27/9/2024
+            </li>
+            <li>
+              <strong>3.</strong> 28/9/2024
+            </li>
+          </ul>
         </div>
       </div>
     </div>

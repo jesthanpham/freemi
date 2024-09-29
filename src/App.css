@@ -99,8 +99,8 @@ search-button:hover {
   font-style: normal;
 }
 .big-num {
-  margin: 0 0;
-  font-size: 200px;
+  margin: 0 0 0 0;
+  font-size: 180px;
   font-family: "Prata";
   font-weight: 400;
   font-style: normal;
@@ -120,4 +120,19 @@ ul {
 
 li {
   padding: 5px;
+}
+
+.separator {
+  border: none; /* Remove default border */
+  height: 1px; /* Thickness of the line */
+  background-color: #ffffff; /* Color of the line */
+  margin: 40px 20px; /* Space above and below the line */
+}
+
+.times {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Prata";
+  font-weight: 600;
+  font-style: normal;
 }
