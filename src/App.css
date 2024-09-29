@@ -17,7 +17,7 @@ body {
 
 .logo-search {
   margin-top: 200px;
-  margin-bottom: 180px;
+  margin-bottom: 40px;
 }
 
 .title {
@@ -104,6 +104,12 @@ search-button:hover {
   font-weight: 400;
   font-style: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heatmap {
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 50px;
 }
 
 ul {
