@@ -12,8 +12,14 @@ body {
   text-align: center;
 }
 
+.logo-search {
+  margin-top: 200px;
+  margin-bottom: 180px;
+}
+
 .title {
-  font-size: 100px;
+  margin-top: 40px;
+  font-size: 80px;
   letter-spacing: 0.08em;
   font-family: "Prata", serif;
   font-weight: 400;
@@ -35,12 +41,30 @@ body {
   outline: none; /* Remove default outline */
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28); /* Subtle shadow */
   transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
-  background-color: #fff;
+  background-color: #fff7f0;
 }
 
 .search-input:focus {
   border: 1px solid #4285f4; /* Google blue border on focus */
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.5); /* Slightly darker shadow */
+}
+
+.container {
+  margin-top: 40px;
+  display: flex; /* This puts the panels side by side */
+  justify-content: space-between; /* Optional: Adds space between panels */
+  width: 100%; /* Full width of the container */
+  height: 100vh; /* Full viewport height for vertical panels */
+}
+
+.panel {
+  flex: 1; /* Each panel takes up equal space */
+  margin: 0 10px; /* Optional: Adds space between panels */
+  background-color: #fdd6b1; /* Panel background color */
+  border: 1px solid #ccc; /* Optional: Border for clarity */
+  font-size: 20px;
+  height: 100%; /* Full height for vertical panels */
+  border-radius: 12px;
 }
 .big-num {
   font-size: 200px;

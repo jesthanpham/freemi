@@ -117,36 +117,44 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Freemi</h1>
-      <div className="search-container">
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Search with purpose"
-          className="search-input"
-        />
-        <button onClick={handleSearch} className="search-button">
-          Search
-        </button>
+      <div className="logo-search">
+        <h1 className="title">Freemi</h1>
+        <div className="search-container">
+          <input
+            type="text"
+            z
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder="Search, without the noise..."
+            className="search-input"
+          />
+          <button onClick={handleSearch} className="search-button">
+            Search
+          </button>
+        </div>
+      </div>
+      <div className="container">
+        <div className="panel">
+          {" "}
+          <h1>Despite blocking these sites, you've attempted to visit...</h1>
+          {blockCountEntries.length > 0 ? (
+            <ul>
+              {blockCountEntries.map(([url, count]) => (
+                <li key={url}>
+                  {formatUrl(url)} {count} times
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No URLs have been blocked yet.</p>
+          )}
+        </div>
+        <div className="panel">panel 2</div>
+        <div className="panel">panel 3</div>
       </div>
       <h1>You've strayed away... </h1>
       <h1 className="big-num">{totalBlocks}</h1>
-
-      <h1>Despite blocking these sites, you've attempted to visit...</h1>
-
-      {blockCountEntries.length > 0 ? (
-        <ul>
-          {blockCountEntries.map(([url, count]) => (
-            <li key={url}>
-              {formatUrl(url)} {count} times
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No URLs have been blocked yet.</p>
-      )}
 
       <div>
         <h2>Motivational Quote</h2>
