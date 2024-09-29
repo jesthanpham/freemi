@@ -1,18 +1,13 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
 .PopupApp {
   width: 300px;
-  padding: 16px;
-  font-family: Arial, sans-serif;
-}
-
-.PopupApp-header {
-  padding: 10px;
-  color: white;
-  text-align: center;
-}
-
-.PopupApp-header h1 {
-  font-size: 18px;
-  margin: 0;
+  border: none;
 }
 
 .PopupApp-main {
@@ -20,20 +15,6 @@
   text-align: center;
 }
 
-.PopupApp-button {
-  background-color: #61dafb;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+.remove-btn {
   cursor: pointer;
-  border-radius: 4px;
-}
-
-.PopupApp-button:hover {
-  background-color: #21a1c9;
 }
