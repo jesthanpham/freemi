@@ -46,7 +46,7 @@ function App() {
           messages: [
             {
               role: "user",
-              content: `Generate a motivational quote focused on-self improvement. Incorporate keywords like empowering, to make the quote more specific and relevant. Set a tone that is caring, assertive and inspiring, ensuring it resonates with the intended audience of procrastination, lack of dedication and concentration. Draw inspiration from figures who overcame adversity while infusing a touch of humanity. Prioritize quotes that are concise, impactful, and filled with actionable advice. Emphasize getting back on track and encourage a hard working and growth mindset. 30 words max. This quote is one sentence and is also based on avoiding this websites: ${blockedUrls}.`,
+              content: `you will act as a close therapist providing support on staying focused and avoid distractions like the following websites ${blockedUrls} you dont have to list every website. sound relatable and supportive, but also assertive that continually being distracted will have negative outcomes on life. about 40 words long. sound formal. start the message with an extra random letter at the front`,
             },
           ],
         },
@@ -170,8 +170,11 @@ function App() {
             <p>No URLs have been blocked yet.</p>
           )}
           <hr className="separator"></hr>
+        </div>
+
+        <div className="panel">
           <div>
-            <p className="panel-header">Motivational Quote</p>
+            <p className="panel-header">Words from Freemi AI</p>
 
             {/* Show the loading state */}
             {isLoading && <p>Loading quote...</p>}
@@ -185,9 +188,6 @@ function App() {
               {/* Wrap the displayedQuote in quotes here */}
             </div>
           </div>
-        </div>
-
-        <div className="panel">
           <img src={lineArt} alt="line art of Freemi AI" class="bottom-image" />
         </div>
         <div className="panel">
