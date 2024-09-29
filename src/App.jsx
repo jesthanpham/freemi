@@ -52,10 +52,13 @@ function App() {
         }
       );
 
-      // Get and set the full quote from OpenAI
-      const fullQuote = response.data.choices[0].message.content;
-      setQuote(fullQuote);
-
+      // Ensure the response has valid data before using it
+      const fullQuote = response.data?.choices?.[0]?.message?.content ?? "";
+      if (fullQuote) {
+        setQuote(fullQuote.trim()); // Set the quote without adding extra quotes
+      } else {
+        throw new Error("No quote received");
+      }
     } catch (error) {
       console.error("Error fetching response from OpenAI:", error);
       setError("Something went wrong. Please try again.");
@@ -69,12 +72,15 @@ function App() {
     if (quote) {
       let index = 0;
       const typingInterval = setInterval(() => {
-        setDisplayedQuote((prev) => prev + quote[index]);
-        index++;
-        if (index === quote.length) {
+        if (index < quote.length) {
+          setDisplayedQuote((prev) => prev + quote.charAt(index));
+          index++;
+        } else {
           clearInterval(typingInterval); // Stop the interval when the full quote is displayed
         }
       }, 50); // Adjust the speed of typing by changing the interval duration (in milliseconds)
+
+      return () => clearInterval(typingInterval); // Clean up interval on component unmount
     }
   }, [quote]);
 
@@ -106,7 +112,7 @@ function App() {
 
         {/* Display the quote letter by letter */}
         <div>
-          <p>{displayedQuote}</p>
+        <p>"{displayedQuote.replace(/^"|"$/g, '')}"</p> {/* Wrap the displayedQuote in quotes here */}
         </div>
       </div>
     </div>
