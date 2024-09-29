@@ -117,21 +117,14 @@ function App() {
 
   return (
     <div className="App">
-      <ul className="nav">
-        <li>
-          <h2 className=" nav-item title">Freemi</h2>
-        </li>
-        <li className="nav-item">
-          <a href="blocked.html">Blocked Sites</a>
-        </li>
-      </ul>
+      <h1 className="title">Freemi</h1>
       <div className="search-container">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Search the web"
+          placeholder="Search with purpose"
           className="search-input"
         />
         <button onClick={handleSearch} className="search-button">
@@ -166,7 +159,8 @@ function App() {
 
         {/* Display the quote letter by letter */}
         <div>
-        <p>"{displayedQuote.replace(/^"|"$/g, '')}"</p> {/* Wrap the displayedQuote in quotes here */}
+          <p>"{displayedQuote.replace(/^"|"$/g, "")}"</p>{" "}
+          {/* Wrap the displayedQuote in quotes here */}
         </div>
       </div>
     </div>
