@@ -58,6 +58,7 @@ body {
   justify-content: space-between; /* Optional: Adds space between panels */
   width: 100%; /* Full width of the container */
   height: 100vh; /* Full viewport height for vertical panels */
+  min-width: 640px;
 }
 
 .panel {
@@ -66,7 +67,7 @@ body {
   background-color: #fdd6b1; /* Panel background color */
   border: 1px solid #ccc; /* Optional: Border for clarity */
   font-size: 20px;
-  height: 100%; /* Full height for vertical panels */
+  height: 60%; /* Full height for vertical panels */
   border-radius: 12px;
 }
 

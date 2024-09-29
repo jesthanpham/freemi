@@ -151,10 +151,7 @@ function App() {
             <p>No URLs have been blocked yet.</p>
           )}
         </div>
-        <div className="panel">
-          <p className="panel-header">You've strayed away... </p>
-          <h1 className="big-num">{totalBlocks}</h1>
-        </div>
+
         <div className="panel">
           <div>
             <h2>Motivational Quote</h2>
@@ -171,6 +168,11 @@ function App() {
               {/* Wrap the displayedQuote in quotes here */}
             </div>
           </div>
+        </div>
+        <div className="panel">
+          <p className="panel-header">You've strayed away a total of... </p>
+          <h1 className="big-num">{totalBlocks}</h1>
+          <p className="panel-header">{totalBlocks === 1 ? "time" : "times"}</p>
         </div>
       </div>
     </div>
