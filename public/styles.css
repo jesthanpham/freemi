@@ -6,7 +6,7 @@
  */
 
 .react-calendar-heatmap text {
-  font-size: 10px;
+  font-size: 8px;
   fill: #aaa;
 }
 
@@ -15,22 +15,37 @@
 }
 
 .react-calendar-heatmap rect:hover {
-  stroke: #555;
-  stroke-width: 1px;
+  fill: rgb(111, 177, 80);
+}
+.react-calendar-heatmap rect {
+  transition: fill 0.2s ease; /* Animate the 'fill' property over 0.3 seconds with an 'ease' curve */
 }
 
 /*
    * Default color scale
    */
 
+.react-calendar-heatmap .color-scale-4 {
+  fill: #ffa8a8; /* Light grey for no data */
+}
+
+.react-calendar-heatmap .color-scale-3 {
+  fill: #ffcfcf; /* Light green for low activity */
+}
+
+.react-calendar-heatmap .color-scale-2 {
+  fill: #ffffff; /* Medium green for moderate activity */
+}
+
+.react-calendar-heatmap .color-scale-1 {
+  fill: #ccdbaf; /* Darker green for high activity */
+}
+.react-calendar-heatmap .color-scale-0 {
+  fill: #c6e48b; /* Darkest green for very high activity */
+}
 .react-calendar-heatmap .color-empty {
-  fill: #eeeeee;
+  fill: #c6e48b; /* Darkest green for very high activity */
 }
-
-.react-calendar-heatmap .color-filled {
-  fill: #8cc665;
-}
-
 /*
    * Github color scale
    */

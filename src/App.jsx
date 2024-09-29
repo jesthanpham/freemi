@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "../public/styles.css";
+import { dateData } from "../public/dateData";
 
 function App() {
   const [blockCounts, setBlockCounts] = useState({});
@@ -139,12 +140,13 @@ function App() {
           <CalendarHeatmap
             startDate={new Date("2024-06-01")}
             endDate={new Date("2024-12-31")}
-            values={[
-              { date: "2016-01-01", count: 12 },
-              { date: "2016-01-22", count: 122 },
-              { date: "2016-01-30", count: 38 },
-              // ...and so on
-            ]}
+            classForValue={(value) => {
+              if (!value) {
+                return "color-empty"; // No data
+              }
+              return `color-scale-${Math.min(Math.ceil(value.count / 5), 4)}`; // Scale based on activity
+            }}
+            values={dateData}
           />
         </div>
       </div>
