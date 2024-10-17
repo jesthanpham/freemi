@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/43a3959f-b8aa-402d-af8a-0e7fc58153d2)
-FREEMI
-A chrome extension designed to help you stay on task!
+
+FREEMI: A chrome extension designed to help you stay on task!
 
 Inspiration
 In today's digital age, the average person spends nearly 7 hours a day online. Online addiction and procrastination are serious problems, especially in youth. It's become so bad that a study found that 40% of youth reported having a social media addiction. How did it come to this?
